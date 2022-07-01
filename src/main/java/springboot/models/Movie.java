@@ -5,10 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
+import java.time.LocalDateTime;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Getter
@@ -19,6 +16,7 @@ public class Movie {
 	private int movieId;
 	private int cinemaId;
     private String movieName;
-    @JsonFormat(pattern="dd-MM-yyyy HH:mm:ss")
-    private Date movieTime;
+    //@JsonFormat(pattern="dd-MM-yyyy HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd'T'HH:mm")
+    private LocalDateTime movieTime;
 }
